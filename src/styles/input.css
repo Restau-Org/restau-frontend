@@ -1,0 +1,43 @@
+label {
+  color: #868585;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 14px;
+  transition: 0.2s ease-in-out;
+}
+.input-text::placeholder {
+  font-size: 14px;
+  font-weight: bold;
+  color: #bab8b8;
+}
+.select-container:focus-within label,
+.input-container:focus-within label {
+  color: var(--main-orange-color) !important;
+}
+input:focus{
+  border: 1px solid var(--main-orange-color) !important;
+  outline: none;
+  box-shadow: none;
+}
+input.active:invalid {
+  outline: none;
+  border-color: #ad1d1d;
+  --tw-ring-color: #ad1d1d;
+}
+.error {
+  color: #ad1d1d;
+  font-size: small;
+}
+.edit-placeholder {
+  padding-left: 12px !important;
+}
+.edit-placeholder,
+.edit-placeholder::placeholder,
+.edit-select {
+  font-size: 0.9rem;
+}
+
+
+.react-selector {
+  font-size: 11px;
+}

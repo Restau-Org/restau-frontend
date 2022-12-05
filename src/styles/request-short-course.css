@@ -1,0 +1,82 @@
+.shortcourse-application-form {
+    padding-top: 6% !important;
+  }
+  .short-course-modules-input-div {
+    display: flex;
+    width: 100%;
+  }
+  .short-course-modules-input-div > div {
+    margin: 0% 4%;
+  }
+  .short-course-form-div {
+    margin: 0% 20%;
+  }
+  .add-module-btn {
+    border: 1px dashed rgb(32, 79, 235);
+    padding: 0.5% 5%;
+    width: 30%;
+    white-space: nowrap;
+    margin: 2% 0%;
+    color: rgb(32, 79, 235);
+    font-weight: bold;
+    border-radius: 5px;
+  }
+  .add-module-btn:hover {
+    background-color: rgb(59, 84, 167);
+    color: #fff;
+  }
+  .remove-module-btn {
+    border: 1px dashed red;
+    padding: 1.5% 5%;
+    width: 120%;
+    white-space: nowrap;
+    margin: 15% 0% 2%;
+    color: red;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+  .remove-module-btn:hover {
+    background-color: rgb(238, 40, 40);
+    color: #fff;
+  }
+  
+  .module-input-div{
+    display: flex;
+  }
+  .module-input-div > div {
+    margin: 4% 2%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+  .input,.select {
+    height: 35px;
+    width: 100%;
+    padding: 7px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid rgb(220, 220, 220);
+  }
+  
+  .input:focus {
+    border: 1px solid rgb(0, 208, 255);
+  }
+  
+  .first-division {
+    display: flex;
+    flex-direction: column;
+    margin: 0 5px 0rem 0;
+    width: 100%;
+  }
+  
+  .second-division button {
+    margin-top: 55%;
+    color: red;
+    border: 1px solid red;
+  }
+  .services {
+    display: flex;
+    margin-left: -2%;
+  }

@@ -1,0 +1,136 @@
+.table-header .left .table-header-buttons {
+  background: #e5e5e5;
+  border-radius: 15px;
+}
+
+.table-header .left .table-header-buttons .dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #868585;
+  margin: 0.8rem;
+}
+
+.table-header .left .table-header-buttons button {
+  padding: 5px 25px;
+  color: #868585 !important;
+  background-color: #e5e5e5 !important;
+  font-weight: bold;
+  font-size: 14px;
+}
+.table-header .left .table-header-buttons button.active {
+  background: #1d5fad !important;
+  border-radius: 15px;
+  color: #fff !important;
+}
+
+.table-header .right input,
+.table-header .right select {
+  border: 1px solid #bab8b8;
+  box-sizing: border-box;
+  border-radius: 5px;
+  outline: none;
+  width: 150px;
+  height: 35px;
+  padding: 0.1rem 0.4rem;
+  color: #bab8b8;
+}
+
+.table-header .left input {
+  border: 1px solid #bab8b8;
+  box-sizing: border-box;
+  border-radius: 5px;
+  outline: none;
+  width: 180px;
+  height: 35px;
+  padding: 0.1rem 0.4rem;
+  color: #bab8b8;
+  background: #eaeaea;
+}
+
+table.sm-transfers-table {
+  border-collapse: collapse;
+  min-width: 100%;
+  width: max-content;
+}
+
+.horizontal-scroll::-webkit-scrollbar,
+.sm-transfers-table-container::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+/* Track */
+.horizontal-scroll::-webkit-scrollbar-track,
+.sm-transfers-table-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.horizontal-scroll::-webkit-scrollbar-thumb:horizontal,
+.sm-transfers-table-container::-webkit-scrollbar-thumb:horizontal {
+  background: #888;
+}
+
+/* Handle on hover */
+.horizontal-scroll::-webkit-scrollbar-thumb:horizontal:hover,
+.sm-transfers-table-container::-webkit-scrollbar-thumb:horizontal:hover {
+  background: #555;
+}
+
+table.sm-transfers-table th,
+table.sm-transfers-table td {
+  text-align: left;
+  padding: 10px 8px;
+  font-size: 13px;
+}
+table.sm-transfers-table th.center,
+table.sm-transfers-table td.center {
+  text-align: center;
+}
+
+table.sm-transfers-table img {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+table.sm-transfers-table tr:nth-child(even) {
+  background: rgba(156, 161, 167, 0.08);
+  width: 100%;
+  color: #9a9a9a;
+}
+
+table.sm-transfers-table tr:nth-child(odd) {
+  background: #f1f5fa;
+  border-radius: 10px;
+  width: 100%;
+  color: #9a9a9a;
+}
+
+table.sm-transfers-table tr.blue {
+  background: #f1f5fa;
+}
+
+table.sm-transfers-table .space {
+  height: 0.5rem;
+  width: 100%;
+  background-color: #fff;
+}
+table.sm-transfers-table th {
+  background: #f1f5fa;
+  color: #1d5fad;
+}
+
+table.sm-transfers-table th.red,
+table.sm-transfers-table td.red {
+  color: #ad1d1d;
+}
+
+@media screen and (max-width: 992px) {
+  table.sm-transfers-table {
+    width: max-content;
+    min-width: 100%;
+  }
+}
