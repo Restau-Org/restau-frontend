@@ -65,19 +65,6 @@
 .controlled-height {
   height: 20rem;
 }
-.trainerChartContainer,
-.BgChart {
-  padding: 10px;
-  padding-left: 20px;
-  background: #ffffff;
-  box-shadow: 0px 3.88917px 11.6675px rgba(0, 0, 0, 0.06);
-  border-radius: 12.9639px;
-  width: 60%;
-}
-.trainerChartContainer {
-  width: 78%;
-  margin-top: 3rem;
-}
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .BgChart {

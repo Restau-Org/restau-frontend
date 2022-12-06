@@ -57,7 +57,6 @@ function Dashboard() {
   const [render, setrender] = useState(false);
 
   useEffect(() => {
-    console.warn(role)
     setrender(true);
   }, []);
 

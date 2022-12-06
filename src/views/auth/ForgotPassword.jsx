@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import { showInputError, showFormErrors } from '../../helpers/validateInput'
-import Input from '../../components/Input'
-import Logo from '../../assets/logos/restau.svg'
-import '../../styles/register.css'
-import { Link, useHistory } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { Link, useHistory } from 'react-router-dom'
 import { initiateReset } from '../../actions/AuthActions'
-import { clearMessage } from "../../actions/MessageAction";
-
+import { clearMessage } from "../../actions/MessageAction"
+import Logo from '../../assets/logos/restau.svg'
+import Input from '../../components/Input'
+import { showFormErrors, showInputError } from '../../helpers/validateInput'
+import '../../styles/register.css'
 
 const ForgotPassword = () => {
 
@@ -47,7 +46,7 @@ const ForgotPassword = () => {
       <div className="w-full max-w-lg space-y-2 bg-white rounded-lg py-12 pb-1">
         {/* logo */}
         <div className="logo-container">
-          <img src={Logo} alt="RTB Logo" className="m-auto logo" />
+          <img src={Logo} alt="Restau Logo" className="m-auto logo" />
         </div>
         <div className="text-center font-bold primary-color capitalize text-2xl header-reg px-10 py-5">
           Reset Password

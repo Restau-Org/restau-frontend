@@ -38,8 +38,6 @@ const Sidebar = ({
     const profile = decrypt(profilePayload);
     const userRole = profile?.profile?.role?.name;
     setUserRole(userRole);
-    console.warn(profile?.profile?.role?.name === sidebarRoles.ADMIN);
-    console.warn(role)
   }, [dispatch]);
 
 

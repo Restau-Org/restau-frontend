@@ -6,7 +6,7 @@
 
 const AdminRoutes = [
   "/admin/restaurants",
-  "/admin/managers",
+  "/admin/managers"
 ];
 
 const ManagerRoutes = [

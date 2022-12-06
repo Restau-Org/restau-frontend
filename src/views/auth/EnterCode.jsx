@@ -91,7 +91,7 @@ const EnterCode = ({
       <div className="w-full max-w-lg space-y-2 bg-white rounded-lg py-12 pb-10">
         {/* logo */}
         <div className="logo-container">
-          <img src={Logo} alt="RTB Logo" className="m-auto logo" />
+          <img src={Logo} alt="Restau Logo" className="m-auto logo" />
         </div>
         <div className="text-center font-bold primary-color capitalize text-2xl header-reg px-10 py-5">
           Code

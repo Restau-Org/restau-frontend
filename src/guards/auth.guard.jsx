@@ -32,7 +32,8 @@ function AuthGuard() {
       if (!profile) {
         setAuth(false);
       } else {
-        const { role, trainerType } = profile;
+        let { role } = profile;
+        role = role.name
         switch (role) {
           case ADMIN:
             setAuth(isAuthorizedToRoute(AdminRoutes));

@@ -119,22 +119,13 @@ a.inactive {
 }
 
 .sidebar-title-link {
-  background: #1d5fad;
+  background: var(--main-orange-bg);
   border-radius: 8px;
   color: #fff;
   padding: 0.3rem 1rem;
   font-weight: bold;
   font-size: 15px;
 }
-
-#RequestChangeSchoolTitle{
-  background: #1d5fad;
-  color: #fff;
-  padding: 1rem 1rem;
-  font-weight: bold;
-  font-size: 15px;
-}
-
 .closing-link {
   background: #ea3546;
   border-radius: 8px;
@@ -144,8 +135,8 @@ a.inactive {
   font-size: 15px;
 }
 
-.new-school-link {
-  background: #1d5fad;
+.button-link {
+  background: var(--main-orange-bg);
   border-radius: 3px;
   color: #fff;
   padding: 0.5rem 1.6rem;
@@ -153,16 +144,6 @@ a.inactive {
   font-size: 15px;
   width: 11rem;
   height: 2.4rem;
-}
-.new-consumable-link {
-  background: #1d5fad;
-  border-radius: 3px;
-  color: #fff;
-  padding: 0.5rem 1.6rem;
-  font-weight: bold;
-  font-size: 15px;
-  width: 22rem !important;
-  height: 2.4rem !important;
 }
 
 .sidebar-title-link.large {
@@ -208,7 +189,7 @@ a.inactive {
 }
 
 .table-pagination .pagination-item.active {
-  background: #1d5fad;
+  background: var(--main-orange-bg);
   color: #fff;
 }
 
@@ -216,27 +197,6 @@ a.inactive {
   font-size: 13px;
 }
 
-.trainer-buttons-container{
-  width: 65em;
-  justify-content: space-between;
-}
-
-.trainer-buttons {
-  background: #e5e5e5;
-  border-radius: 5px 0px;
-}
-.trainer-buttons .trainer-button {
-  cursor: pointer;
-  min-width: 100px;
-  /* font-weight: bold; */
-  font-size: 12px;
-  color: #868585;
-}
-.trainer-buttons .trainer-button.active {
-  background: #1d5fad;
-  border-radius: 5px;
-  color: #ffffff;
-}
 
 .test-profile img {
   border-radius: 50%;

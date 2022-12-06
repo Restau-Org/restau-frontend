@@ -1,8 +1,8 @@
 import React from "react";
 import Pagination from "./Pagination";
 
-const Pagination = (props) => {
+const TablePagination = (props) => {
   return <Pagination {...props}></Pagination>;
 };
 
-export default Pagination;
+export default TablePagination;

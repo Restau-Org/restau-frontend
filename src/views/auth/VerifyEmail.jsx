@@ -50,7 +50,7 @@ const VerifyEmail = () => {
       >
         {/* logo */}
         <div className="logo-container">
-          <img src={Logo} alt="RTB Logo" className="m-auto logo" />
+          <img src={Logo} alt="Restau Logo" className="m-auto logo" />
         </div>
         {status.loading ? (
           <div className="py-8 text-center text-black font-bold">

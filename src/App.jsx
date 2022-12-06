@@ -18,7 +18,7 @@ import CreatePassword from "./views/auth/CreatePassword"
 import VerifyEmail from "./views/auth/VerifyEmail"
 import { clearMessage } from "./actions/MessageAction";
 import Dashboard from "./views/shared/Dashboard";
-
+import AdminRestaurantsPage from "./views/admin/AdminRestaurantsPage";
 
 function PrivateRoute({ children, ...rest }) {
   return (
@@ -99,8 +99,13 @@ export default function App() {
           <Dashboard />
         </PrivateRoute>
 
+        {/* Admin Routes */}
+        <PrivateRoute exact path="/admin/restaurants">
+          <AdminRestaurantsPage />
+        </PrivateRoute>
+
         {/* 404 */}
-        <Route component={PageNotFound} />
+        {/* <Route component={PageNotFound} /> */}
       </Switch>
     </Router>
   );

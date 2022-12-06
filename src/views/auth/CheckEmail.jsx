@@ -9,7 +9,7 @@ const CheckEmail = ({
   dispatch,
   user
 }) => {
-  const dotInEmail = (email = "user123@rtb.com") => {
+  const dotInEmail = (email = "user123@gmail.com") => {
     let indexofAt = email.trim().indexOf('@');
     let leftPortion = email.slice(0, indexofAt);
     let rightPortion = email.slice(indexofAt, email.length)
@@ -33,7 +33,7 @@ const CheckEmail = ({
         <div className="w-full max-w-lg w-full space-y-2 bg-white rounded-lg py-4 pb-3">
           {/* logo */}
           <div className="logo-container">
-            <img src={Logo} alt="RTB Logo" className="m-auto logo" />
+            <img src={Logo} alt="Restau Logo" className="m-auto logo" />
           </div>
           <div className="text-center font-bold primary-color capitalize text-2xl header-reg px-10">
             Check email
