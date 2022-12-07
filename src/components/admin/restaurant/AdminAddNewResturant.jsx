@@ -1,9 +1,9 @@
 import React from "react";
 import { FaTimes } from "react-icons/fa";
-import "../../styles/forms.css";
-import Input from "../Input";
-import checkIcon from "../../assets/icons/check.png";
-import { postRestaurant,dispatchReloadRestaurants,changeRestaurant} from "../../actions/AdminRestaurantsAction"
+import "../../../styles/forms.css";
+import Input from "../../Input";
+import checkIcon from "../../../assets/icons/check.png";
+import { postRestaurant,dispatchReloadRestaurants,changeRestaurant} from "../../../actions/AdminRestaurantsAction"
 
 const AdminAddNewRestaurant = ({
     isEdit = false,

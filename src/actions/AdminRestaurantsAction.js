@@ -99,6 +99,27 @@ export function fetchRestaurants(page = 0, searchValues = { name: null },status=
     };
 }
 
+export async function getAllRestaurants(status) {
+    let restaurantOptions = []
+    try {
+        const url = `/restaurants/all?status=${status}`;
+        let response = await axios.get(`${ENDPOINT}${url}`,{
+            headers: authHeader(),
+        });
+        for(const restaurant of response.data.data){
+            const data = {
+                value: restaurant.id,
+                label: restaurant.name
+            }
+            restaurantOptions.push(data)
+        }
+
+    } catch (err) {
+        toast.error(err?.response?.data?.message || "Fetching restaurants failed")
+    }
+    return restaurantOptions;
+}
+
 async function reloadRestaurants(dispatch, getState) {
     let currentPage = getState().adminRestaurants.number;
     await dispatch(fetchRestaurants(currentPage));

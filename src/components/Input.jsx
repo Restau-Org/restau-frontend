@@ -28,7 +28,7 @@ const Input = ({
 				required={required}
 				className={`${sendEmail
 					? 'w-64 '
-					: 'w-full '} border input-text mt-3 border-gray-400	rounded appearance-none  py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:border-transparent`}
+					: 'w-full '} border input-text mt-3 border-gray-400	rounded appearance-none  py-2 px-4 text-gray-700 leading-tight`}
 				placeholder={placeholder}
 				ref={textInput}
 				style={ styles }

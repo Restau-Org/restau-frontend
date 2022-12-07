@@ -14,8 +14,12 @@ label {
 .input-container:focus-within label {
   color: var(--main-orange-color) !important;
 }
+.select-input>input{
+  border: none !important;
+  outline: none !important;
+}
 input:focus{
-  border: 1px solid var(--main-orange-color) !important;
+  border: 1px solid var(--main-orange-color);
   outline: none;
   box-shadow: none;
 }

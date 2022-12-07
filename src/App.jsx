@@ -19,6 +19,7 @@ import VerifyEmail from "./views/auth/VerifyEmail"
 import { clearMessage } from "./actions/MessageAction";
 import Dashboard from "./views/shared/Dashboard";
 import AdminRestaurantsPage from "./views/admin/AdminRestaurantsPage";
+import AdminManagersPage from "./views/admin/AdminManagersPage";
 
 function PrivateRoute({ children, ...rest }) {
   return (
@@ -102,6 +103,9 @@ export default function App() {
         {/* Admin Routes */}
         <PrivateRoute exact path="/admin/restaurants">
           <AdminRestaurantsPage />
+        </PrivateRoute>
+        <PrivateRoute exact path="/admin/managers">
+          <AdminManagersPage />
         </PrivateRoute>
 
         {/* 404 */}
