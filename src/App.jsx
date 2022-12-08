@@ -16,10 +16,13 @@ import CheckEmail from "./views/auth/CheckEmail";
 import EnterCode from "./views/auth/EnterCode";
 import CreatePassword from "./views/auth/CreatePassword"
 import VerifyEmail from "./views/auth/VerifyEmail"
-import { clearMessage } from "./actions/MessageAction";
+import { clearMessage } from "./actions/auth/MessageAction";
 import Dashboard from "./views/shared/Dashboard";
 import AdminRestaurantsPage from "./views/admin/AdminRestaurantsPage";
 import AdminManagersPage from "./views/admin/AdminManagersPage";
+import ManagerWaitersPage from "./views/manager/ManagerWaitersPage";
+import ManagerClerksPage from "./views/manager/ManagerClerksPage";
+import ManagerChefPage from "./views/manager/ManagerChefPage";
 
 function PrivateRoute({ children, ...rest }) {
   return (
@@ -108,8 +111,18 @@ export default function App() {
           <AdminManagersPage />
         </PrivateRoute>
 
+        {/* Manager Routes */}
+        <PrivateRoute exact path="/manager/waiters">
+          <ManagerWaitersPage />
+        </PrivateRoute>
+        <PrivateRoute exact path="/manager/clerks">
+          <ManagerClerksPage />
+        </PrivateRoute>
+        <PrivateRoute exact path="/manager/chefs">
+          <ManagerChefPage />
+        </PrivateRoute>
         {/* 404 */}
-        {/* <Route component={PageNotFound} /> */}
+        <Route component={PageNotFound} />
       </Switch>
     </Router>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/input.css";
+import "../../styles/forms.css";
 import { isObject } from "lodash";
 
 const TableHeaderInput = ({

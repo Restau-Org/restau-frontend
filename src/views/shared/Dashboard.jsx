@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { logout } from "../../actions/AuthActions";
+import { logout } from "../../actions/auth/AuthActions";
 import { sidebarRoles } from "../../components/Reusable/Sidebar";
 import SidebarPage from "../../components/Reusable/SidebarPage";
 import AdminDashboard from "../../components/dashboards/AdminDashboard";
@@ -74,12 +74,6 @@ function Dashboard() {
           <div className="flex w-full">
             {user && (
               <div className="flex flex-col md:pl-10 items-center w-full test-profile">
-                {displayRole === "Restaurant Manager" && (
-                  <AdminDashboard
-                    AdminProfile={profile}
-                    displayRole={displayRole}
-                  />
-                )}
                 {role === "ADMIN" && (
                   <AdminDashboard
                     AdminProfile={profile}

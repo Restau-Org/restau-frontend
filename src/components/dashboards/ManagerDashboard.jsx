@@ -1,7 +1,7 @@
 import React from 'react'
 import avatar2Image from "../../assets/images/avatar2.jpg";
 
-function AdminDashboard({
+function ManagerDashboard({
   ManagerProfile,
   displayRole
 }) {
@@ -24,4 +24,4 @@ function AdminDashboard({
   )
 }
 
-export default AdminDashboard
+export default ManagerDashboard

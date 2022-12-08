@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { showInputError, showFormErrors } from '../../helpers/validateInput'
-import Input from '../../components/Input'
+import Input from '../../components/Reusable/Input'
 import { useHistory } from 'react-router-dom'
 import Logo from '../../assets/logos/restau.svg'
 import '../../styles/register.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { resetPassword } from '../../actions/AuthActions'
+import { resetPassword } from '../../actions/auth/AuthActions'
 
 const CreatePassword = () => {
   const [resetData, setRestData] = useState({});

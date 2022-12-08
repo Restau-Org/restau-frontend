@@ -1,8 +1,8 @@
 import React from "react";
-import TableHeader from "../../pagnation/TableHeader";
+import TableHeader from "../../pagination/TableHeader";
 import "../../../styles/tables.css";
-import TablePagination from "../../pagnation/TablePagination";
-import { editRestaurant,enableRestaurant,disableRestaurant } from "../../../actions/AdminRestaurantsAction";
+import TablePagination from "../../pagination/TablePagination";
+import { editRestaurant,enableRestaurant,disableRestaurant } from "../../../actions/admin/AdminRestaurantsAction";
 import AdminAddNewRestaurant from "./AdminAddNewResturant";
 import { FaPen, FaTimes, FaToggleOff,FaToggleOn } from "react-icons/fa";
 

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { showInputError, showFormErrors } from "../../helpers/validateInput";
-import Input from "../../components/Input";
+import Input from "../../components/Reusable/Input";
 import { Link, useHistory } from "react-router-dom";
 import Logo from "../../assets/logos/restau.svg";
-import { login } from "../../actions/AuthActions";
+import { login } from "../../actions/auth/AuthActions";
 import { useDispatch, useSelector } from "react-redux";
-import { clearMessage } from "../../actions/MessageAction";
+import { clearMessage } from "../../actions/auth/MessageAction";
 import "../../styles/register.css";
 
 const Login = () => {

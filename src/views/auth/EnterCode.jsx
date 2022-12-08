@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { connect, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
-import { checkCode, initiateReset } from '../../actions/AuthActions';
+import { checkCode, initiateReset } from '../../actions/auth/AuthActions';
 import Countdown from "react-countdown";
 import Logo from '../../assets/logos/restau.svg'
 import '../../styles/register.css'

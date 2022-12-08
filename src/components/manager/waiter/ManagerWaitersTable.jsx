@@ -3,10 +3,10 @@ import TableHeader from "../../pagination/TableHeader";
 import "../../../styles/tables.css";
 import TablePagination from "../../pagination/TablePagination";
 
-export default function AdminManagersTable({
+export default function ManagerWaitersTable({
   openModal,
   closeModal,
-  managers = [],
+  waiters = [],
   pages = 0,
   currentPage = 0,
   changePage,
@@ -49,7 +49,7 @@ export default function AdminManagersTable({
     },
   ];
 
-  let displayManagers = [...managers];
+  let displayWaiters = [...waiters];
 
   let tabs = ["Active", "Deactivated"];
 
@@ -65,7 +65,7 @@ export default function AdminManagersTable({
         {""}
       </TableHeader>
       {renderTable({
-        tableData: displayManagers,
+        tableData: displayWaiters,
         loading
       })}
       <TablePagination
@@ -95,7 +95,6 @@ const renderTable = ({
             <th>Lastname</th>
             <th>Email</th>
             <th>Phone Number</th>
-            <th>Restaurant</th>
           </tr>
         </thead>
 
@@ -109,7 +108,6 @@ const renderTable = ({
                   <td>{tr?.lastName}</td>
                   <td>{tr?.email}</td>
                   <td className="text-center">{tr?.phoneNumber}</td>
-                  <td>{tr?.restaurant?.name}</td>
                 </tr>
               </>
             ))}

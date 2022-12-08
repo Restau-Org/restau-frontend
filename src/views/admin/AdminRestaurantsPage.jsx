@@ -5,7 +5,7 @@ import SidebarPage from "../../components/Reusable/SidebarPage";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import "../../styles/tables.css";
-import { fetchRestaurants,postRestaurant } from "../../actions/AdminRestaurantsAction";
+import { fetchRestaurants,postRestaurant } from "../../actions/admin/AdminRestaurantsAction";
 import AdminRestaurantsTable from '../../components/admin/restaurant/AdminResturantsTable';
 import AdminAddNewRestaurant from "../../components/admin/restaurant/AdminAddNewResturant"
 import { decrypt } from "../../services/crypto";

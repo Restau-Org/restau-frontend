@@ -5,16 +5,16 @@ import SidebarPage from "../../components/Reusable/SidebarPage";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import "../../styles/tables.css";
-import { fetchManagers, postManager } from "../../actions/admin/AdminManagersAction";
-import AdminManagersTable from "../../components/admin/manager/AdminManagersTable";
-import AdminAddNewManager from "../../components/admin/manager/AdminAddNewManager";
+import { fetchClerks, postClerks } from "../../actions/manager/ManagerClerksAction";
+import ManagerClerksTable from "../../components/manager/clerk/ManagerClerksTable";
+import ManagerAddNewClerk from "../../components/manager/clerk/ManagerAddNewClerk";
 import { decrypt } from "../../services/crypto";
 const defaultModalStatus = {
   shown: false,
   component: null,
 };
 
-const AdminManagersPage = ({ dispatch, loading, managers, sending }) => {
+const ManagerClerksPage = ({ dispatch, loading, clerks, sending }) => {
   const [modalShown, setmodalShown] = React.useState(defaultModalStatus);
   const [activeTab, setactiveTab] = React.useState("Active");
 
@@ -33,7 +33,7 @@ const AdminManagersPage = ({ dispatch, loading, managers, sending }) => {
   };
 
   React.useEffect(() => {
-    dispatch(fetchManagers(0, { name: null }, activeTab));
+    dispatch(fetchClerks(0, { name: null }, activeTab));
   }, [dispatch, activeTab]);
 
   const changeActiveTab = (newValue) => {
@@ -41,65 +41,65 @@ const AdminManagersPage = ({ dispatch, loading, managers, sending }) => {
   };
 
   const changePage = (newPage, searchValues) => {
-    if (newPage !== managers.number)
-      dispatch(fetchManagers(newPage, searchValues));
+    if (newPage !== clerks.number)
+      dispatch(fetchClerks(newPage, searchValues));
   };
 
-  let breadCrumbData = ["System Admin", "Dashboard", "Managers"];
+  let breadCrumbData = ["Restaurant Manager", "Dashboard", "Clerks"];
   const searchPage = (searchValues) => {
-    if (!searchValues?.name && !managers.searchValues) {
+    if (!searchValues?.name && !clerks.searchValues) {
     } else {
-      dispatch(fetchManagers(0, searchValues));
+      dispatch(fetchClerks(0, searchValues));
     }
   };
-  const submitManagers = (dataTOSubmit) => {
-    dispatch(postManager(dataTOSubmit, history));
+  const submitClerks = (dataTOSubmit) => {
+    dispatch(postClerks(dataTOSubmit, history));
   };
   return (
     <>
       <SidebarPage
         breadCrumbData={breadCrumbData}
-        role={sidebarRoles.ADMIN}
+        role={sidebarRoles.MANAGER}
         whiteSidebar={false}
         pageGray={true}
-        title="System Managers"
+        title="System Clerks"
         classes="p-4 md:p-8"
       >
-        <AdminManagersTable
+        <ManagerClerksTable
           openModal={openModal}
           closeModal={closeModal}
-          managers={managers?.content}
-          pages={managers?.totalPages}
-          currentPage={managers?.number + 1}
+          clerks={clerks?.content}
+          pages={clerks?.totalPages}
+          currentPage={clerks?.number + 1}
           changePage={changePage}
           loading={loading}
           searchPage={searchPage}
-          defaultSearchValues={managers?.searchValues}
+          defaultSearchValues={clerks?.searchValues}
           dispatch={dispatch}
           sending={sending}
           role={profile?.role?.name}
           activeTab={activeTab}
           changeActiveTab={changeActiveTab}
-        ></AdminManagersTable>
-        {profile?.role?.name === "ADMIN" && (
+        ></ManagerClerksTable>
+        {profile?.role?.name === "MANAGER" && (
           <div className="flex w-full justify-center">
             <div className="bg-white flex items-center justify-center w-full">
               <button
                 className="button-link"
                 onClick={() =>
                   openModal(
-                    <AdminAddNewManager
+                    <ManagerAddNewClerk
                       isEdit={false}
                       openModal={openModal}
                       closeModal={closeModal}
-                      submit={submitManagers}
+                      submit={submitClerks}
                       sending={sending}
                       dispatch={dispatch}
-                    ></AdminAddNewManager>
+                    ></ManagerAddNewClerk>
                   )
                 }
               >
-                Register Manager
+                Register Clerk
               </button>
             </div>
           </div>
@@ -113,9 +113,9 @@ const AdminManagersPage = ({ dispatch, loading, managers, sending }) => {
 };
 
 const mapStateToProps = (state) => ({
-  loading: state.adminManagers.loading,
-  managers: state.adminManagers.managers,
-  sending: state.adminManagers.sending,
+  loading: state.managerClerks.loading,
+  clerks: state.managerClerks.clerks,
+  sending: state.managerClerks.sending,
 });
 
-export default connect(mapStateToProps)(AdminManagersPage);
+export default connect(mapStateToProps)(ManagerClerksPage);

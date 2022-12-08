@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useHistory } from 'react-router-dom'
-import { initiateReset } from '../../actions/AuthActions'
-import { clearMessage } from "../../actions/MessageAction"
+import { initiateReset } from '../../actions/auth/AuthActions'
+import { clearMessage } from "../../actions/auth/MessageAction"
 import Logo from '../../assets/logos/restau.svg'
-import Input from '../../components/Input'
+import Input from '../../components/Reusable/Input'
 import { showFormErrors, showInputError } from '../../helpers/validateInput'
 import '../../styles/register.css'
 

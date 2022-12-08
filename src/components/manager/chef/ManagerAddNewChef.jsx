@@ -4,54 +4,38 @@ import "../../../styles/forms.css";
 import Input from "../../Reusable/Input";
 import checkIcon from "../../../assets/icons/check.png";
 import {
-  postManager,
-  dispatchReloadManagers
-} from "../../../actions/admin/AdminManagersAction";
-import Select from "react-select";
-import { getAllRestaurants } from "../../../actions/admin/AdminRestaurantsAction";
+  postChefs,
+  dispatchReloadChefs
+} from "../../../actions/manager/ManagerChefAction";
 
-const AdminAddNewManager = ({
+const ManagerAddNewChef = ({
   isEdit = false,
-  managerDataToEdit = {},
+  chefDataToEdit = {},
   openModal,
   closeModal,
   sending,
-  dispatch,
+  dispatch
 }) => {
-  const [managerPostData, setManagerPostData] = React.useState(
-    isEdit ? managerDataToEdit : {}
+  const [chefPostData, setChefPostData] = React.useState(
+    isEdit ? chefDataToEdit : {}
   );
   const [localSending, setlocalSending] = React.useState(false);
   const [error, seterror] = React.useState("");
-  const [restaurants, setRestaurants] = React.useState([]);
-
-  React.useEffect(() => {
-    async function loadRestaurants() {
-      setRestaurants(await getAllRestaurants("ACTIVE"));
-    }
-    loadRestaurants();
-  }, []);
 
   const inputHandler = (e) => {
     var name = e.target.name;
     var value = e.target.value;
-    setManagerPostData({ ...managerPostData, [name]: value });
-  };
-
-  const selectHandler = (payload) => {
-    var name = payload.name;
-    var value = payload.value;
-    setManagerPostData({ ...managerPostData, [name]: value });
+    setChefPostData({ ...chefPostData, [name]: value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setlocalSending(true);
-    let response = await postManager(managerPostData);
+    let response = await postChefs(chefPostData);
     if (response.success) {
-      openModal(renderSuccessNotice(managerPostData, closeModal));
+      openModal(renderSuccessNotice(chefPostData, closeModal));
       seterror("");
-      dispatch(dispatchReloadManagers());
+      dispatch(dispatchReloadChefs());
     } else {
       seterror(response.error?.response?.data?.message || "Error occured");
     }
@@ -62,7 +46,7 @@ const AdminAddNewManager = ({
     <>
       <div className="table-holder">
         <div className="header text-white flex justify-center items-center relative">
-          {"Register Manager"}
+          {"Register Chef"}
           <FaTimes
             className="text-white absolute right-4 cursor-pointer"
             onClick={closeModal}
@@ -78,7 +62,7 @@ const AdminAddNewManager = ({
                       labelName="Firstname"
                       name="firstName"
                       inputHandler={inputHandler}
-                      defaultInputValue={managerPostData.firstName || ""}
+                      defaultInputValue={chefPostData.firstName || ""}
                       required={true}
                     ></Input>
                   </div>
@@ -87,7 +71,7 @@ const AdminAddNewManager = ({
                       labelName="Lastname"
                       name="lastName"
                       inputHandler={inputHandler}
-                      defaultInputValue={managerPostData.lastName || ""}
+                      defaultInputValue={chefPostData.lastName || ""}
                       required={true}
                     ></Input>
                   </div>
@@ -99,7 +83,7 @@ const AdminAddNewManager = ({
                       labelName="Email"
                       name="email"
                       inputHandler={inputHandler}
-                      defaultInputValue={managerPostData.email || ""}
+                      defaultInputValue={chefPostData.email || ""}
                       placeholder="Enter email"
                       required={true}
                     ></Input>
@@ -112,27 +96,10 @@ const AdminAddNewManager = ({
                       labelName="Phone Number"
                       name="mobile"
                       inputHandler={inputHandler}
-                      defaultInputValue={managerPostData.mobile || ""}
+                      defaultInputValue={chefPostData.mobile || ""}
                       required={true}
                     ></Input>
                   </div>
-                </div>
-                <div className="form-row">
-                    <div className="form-group-full">
-                        <label>Restaurant</label>
-                        <Select
-                            options={restaurants}
-                            name="restaurantId"
-                            onChange={(payload) =>
-                                selectHandler({ ...payload, name: "restaurantId" })
-                            }
-                            className="mt-3 select-input"
-                            placeholder={
-                                <div className="select-placeholder-text">Select Restaurant</div>
-                            }
-                            defaultValue={managerPostData.restaurantId || ""}
-                        />
-                    </div>
                 </div>
 
                 <button type="submit" className="save-btn">
@@ -147,7 +114,7 @@ const AdminAddNewManager = ({
   );
 };
 
-function renderSuccessNotice(managerData, closeModal) {
+function renderSuccessNotice(chefData, closeModal) {
   return (
     <div className="table-holder small">
       <div className="header text-white flex justify-center items-center relative">
@@ -167,4 +134,4 @@ function renderSuccessNotice(managerData, closeModal) {
   );
 }
 
-export default AdminAddNewManager;
+export default ManagerAddNewChef;

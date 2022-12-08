@@ -7,6 +7,9 @@ import { Link, useHistory, useLocation } from "react-router-dom";
 import { FaAngleDown, FaAngleRight, FaTimes } from "react-icons/fa";
 import dashboardIcon from "../../assets/icons/dashboard.png";
 import restaurantIcon from "../../assets/icons/restaurant.png";
+import waiterIcon from "../../assets/icons/waiter.png"
+import clerkIcon from "../../assets/icons/clerk.png"
+import chefIcon from "../../assets/icons/chef.png"
 import managerIcon from "../../assets/icons/manager.png"
 import logoutIcon from "../../assets/icons/logout.png";
 import { decrypt } from "../../services/crypto";
@@ -80,6 +83,24 @@ const Sidebar = ({
         title: "Home",
         path: "/dashboard",
         icon: dashboardIcon
+      },
+      {
+        index: 101,
+        title: "Waiters",
+        path: "/manager/waiters",
+        icon: waiterIcon
+      },
+      {
+        index: 102,
+        title: "Clerks",
+        path: "/manager/clerks",
+        icon: clerkIcon
+      },
+      {
+        index: 103,
+        title: "Chefs",
+        path: "/manager/chefs",
+        icon: chefIcon
       }
     ]
   }

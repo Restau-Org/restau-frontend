@@ -1,19 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { showInputError, showFormErrors } from "../../helpers/validateInput";
-import Input from "../../components/Input";
+import React, { useState } from "react";
 import Logo from "../../assets/logos/restau.svg";
 import "../../styles/register.css";
-import { Link, useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { initiateReset } from "../../actions/AuthActions";
-import { clearMessage } from "../../actions/MessageAction";
+import { Link } from "react-router-dom";
 import useQuery from "../../helpers/useQuery";
 import axios from "axios";
 import authHeader from "../../services/auth-header";
 
 const VerifyEmail = () => {
-  const dispatch = useDispatch();
-  const history = useHistory();
   const [status, setstatus] = useState({
     error: false,
     success: true,
